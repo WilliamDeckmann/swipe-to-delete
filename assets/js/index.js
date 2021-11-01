@@ -1,4 +1,5 @@
 // Element variables
+const mainElement = document.querySelector(".Main");
 const deleteElement = document.querySelector(".Delete");
 const articleElement = document.querySelector(".Article");
 const viewWidth = (window.screen.width * 40) / 100;
@@ -12,7 +13,8 @@ let touchEnd
 
 // Delete
 deleteElement.addEventListener("click", () => {
-    console.log("Delete")
+    mainElement.style.transform = "scale(0, 0)";
+    setTimeout(() => {mainElement.remove()}, 1000);
 });
 
 // Touch start
