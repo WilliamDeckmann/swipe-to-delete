@@ -53,9 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
             let touchMove;
             let touchEnd
 
-            // Width variables
-            const viewWidth = (window.screen.width * 40) / 100;
-
 
 
             // Delete
