@@ -1,20 +1,32 @@
 .Body {
     margin: 0;
-    background-color: lightblue;
 }
 
-.Wrapper {
-    height: 100vh;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.Header {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    text-align: center;
+}
+
+.Reload {
+    padding: 20px;
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: bolder;
+    color: black;
 }
 
 .List {
-    padding: 0;
+    width: 100%;
+    padding: 3px;
     margin: 0;
+    box-sizing: border-box;
     background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
 
 .Item {
@@ -59,20 +71,4 @@
     grid-column: 1 / 3;
     background-color: white;
     transition: transform 0.15s ease;
-}
-
-.Box_red, .Box_blue, .Box_green {
-    height: 150px;
-}
-
-.Box_red {
-    background-color: lightcoral;
-}
-
-.Box_blue {
-    background-color: plum;
-}
-
-.Box_green {
-    background-color: lightgreen
 }
