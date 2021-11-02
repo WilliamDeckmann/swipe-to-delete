@@ -5,6 +5,7 @@
 .Header {
     width: 100%;
     padding: 20px;
+    margin-bottom: 2px;
     box-sizing: border-box;
     text-align: center;
     background-color: white;
