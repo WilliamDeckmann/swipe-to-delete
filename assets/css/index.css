@@ -20,14 +20,13 @@
 
 .List {
     width: 100%;
-    padding: 0;
+    padding: 2px;
     margin: 0;
     box-sizing: border-box;
     background-color: lightgray;
     display: flex;
     flex-direction: column;
-    column-gap: 2px;
-    padding: 2px 0 2px 0;
+    gap: 2px;
 }
 
 .Item {
