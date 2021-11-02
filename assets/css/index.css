@@ -21,7 +21,7 @@
 
 .List {
     width: 100%;
-    padding: 2px;
+    padding: 2px 2px 0 2px;
     margin: 0;
     box-sizing: border-box;
     background-color: lightgray;
@@ -38,10 +38,6 @@
     grid-auto-rows: 150px;
     overflow: hidden;
     transition: height .5s ease-out;
-}
-
-.Item:last-child  {
-    margin-bottom: 0;
 }
 
 .Item.collapsed {

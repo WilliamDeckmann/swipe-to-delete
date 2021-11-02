@@ -3,16 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Element variables
     const list = document.querySelector(".List");
 
-    // URL variablea
+    // URL variables
     let url = "https://jsonplaceholder.typicode.com/users";
 
 
 
-    // Loop: jsonplaceholder
-    for(let i = 0; i < 10; i++) {       
-        axios.get(url)
-        .then(response => {
+    // Fetch api data
+    axios.get(url)
+    .then(response => {
 
+        // Loop: jsonplaceholder
+        for(let i = 0; i < 10; i++) {       
+       
             // Response variable
             var data = response.data[i];
 
@@ -85,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     article.style.transform = `translateX(${e.target.offsetLeft})`;
                 }
             });
-        });   
-    };
+          
+        };
+    });
 });
