@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if(touchEnd < touchStart - remove.offsetWidth / 2) { // remove.offsetWidth / 2  // viewWidth / 2
                     article.style.transform = `translateX(-${remove.offsetWidth}px)`;
                 }else {
-                    article.style.transform = `translateX(${e.target.offsetLeft})`;
+                    article.style.transform = `translateX(0px)`; // ${e.target.offsetLeft}
                 }
             });
           
