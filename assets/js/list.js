@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Response variable
             var data = response.data[i];
-            console.log(data);
+
 
             
             // Create: item
@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Delete
             remove.addEventListener("click", () => {
                 // mainElement.style.transform = "scale(0, 0)";
+                article.style.transform = `translateX(0px)`;
                 item.classList.add("animate__animated", "animate__backOutLeft");
                 setTimeout(() => {item.classList.add("collapsed")}, 500);
                 setTimeout(() => {item.remove()}, 500 + 500); // Wait th time it takes for all animations to run
