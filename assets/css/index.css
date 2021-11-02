@@ -26,7 +26,7 @@
     background-color: lightgray;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    column-gap: 2px;
     padding: 2px 0 2px 0;
 }
 
@@ -34,7 +34,7 @@
     height: 150px;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 30%;
+    grid-template-columns: 1fr 40%;
     grid-auto-rows: 150px;
     overflow: hidden;
     transition: height .5s ease-out;
