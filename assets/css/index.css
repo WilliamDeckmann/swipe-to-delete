@@ -57,6 +57,7 @@
     margin: 0;
     font-weight: bolder;
     text-transform: uppercase;
+    pointer-events: none
 }
 
 .Delete {

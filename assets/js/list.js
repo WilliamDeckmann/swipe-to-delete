@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let item = document.createElement("li");
             list.appendChild(item);
             item.classList.add("Item")
-
+            //item.setAttribute("id", `Item_${i}`);
             
             // Create: remove
             let remove = document.createElement("div");
@@ -45,46 +45,57 @@ document.addEventListener("DOMContentLoaded", () => {
                     Username: ${data.username}
                 </p>
             `;
-
-            
-
-            // Touch variables
-            let touchStart;
-            let touchMove;
-            let touchEnd
-
-
-
-            // Delete
-            remove.addEventListener("click", () => {
-                // mainElement.style.transform = "scale(0, 0)";
-                article.style.transform = `translateX(0px)`;
-                item.classList.add("animate__animated", "animate__backOutLeft");
-                setTimeout(() => {item.classList.add("collapsed")}, 500);
-                setTimeout(() => {item.remove()}, 500 + 500); // Wait th time it takes for all animations to run
-            });
-
-            // Touch start
-            article.addEventListener("touchstart", (e) => touchStart = e.touches[0].clientX);
-
-            // Touch move
-            article.addEventListener("touchmove", (e) => {
-                touchMove = Math.floor(e.touches[0].clientX);
-                if(touchMove < touchStart && touchMove > touchStart - remove.offsetWidth) { // remove.offsetWidth // viewWidth
-                    article.style.transform = `translateX(${touchMove - touchStart}px)`;
-                };
-            });
-
-            // Touch end
-            article.addEventListener("touchend", (e) => {
-                touchEnd = Math.floor(e.changedTouches[0].clientX);
-                if(touchEnd < touchStart - remove.offsetWidth / 2) { // remove.offsetWidth / 2  // viewWidth / 2
-                    article.style.transform = `translateX(-${remove.offsetWidth}px)`;
-                }else {
-                    article.style.transform = `translateX(0px)`; // ${e.target.offsetLeft}
-                }
-            });
-          
         };
     });
+
+
+
+    list.addEventListener("touchstart", (e) => {
+
+        // Target element
+        let target = e.target.parentNode;
+
+        // Element variables
+        let item = target
+        let remove = target.querySelector(".Delete");
+        let article = target.querySelector(".Article");
+
+        // Touch variables
+        let touchStart = e.touches[0].clientX;
+        let touchMove;
+        let touchEnd
+
+
+        
+        // Delete
+        remove.addEventListener("click", () => {
+            // mainElement.style.transform = "scale(0, 0)";
+            article.style.transform = `translateX(0px)`;
+            item.classList.add("animate__animated", "animate__backOutLeft");
+            setTimeout(() => {item.classList.add("collapsed")}, 500);
+            setTimeout(() => {item.remove()}, 500 + 500); // Wait th time it takes for all animations to run
+        });
+
+        // Touch start
+        // article.addEventListener("touchstart", (e) => touchStart = e.touches[0].clientX);
+
+        // Touch move
+        article.addEventListener("touchmove", (e) => {
+            touchMove = Math.floor(e.touches[0].clientX);
+            if(touchMove < touchStart && touchMove > touchStart - remove.offsetWidth) { // remove.offsetWidth // viewWidth
+                article.style.transform = `translateX(${touchMove - touchStart}px)`;
+            };
+        });
+
+        // Touch end
+        article.addEventListener("touchend", (e) => {
+            touchEnd = Math.floor(e.changedTouches[0].clientX);
+            if(touchEnd < touchStart - remove.offsetWidth / 2) { // remove.offsetWidth / 2  // viewWidth / 2
+                article.style.transform = `translateX(-${remove.offsetWidth}px)`;
+            }else {
+                article.style.transform = `translateX(0px)`; // ${e.target.offsetLeft}
+            }
+        });
+        
+    })
 });
