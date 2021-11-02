@@ -1,5 +1,5 @@
 // Element variables
-const mainElement = document.querySelector(".Main");
+const itemElement = document.querySelector(".Item");
 const deleteElement = document.querySelector(".Delete");
 const articleElement = document.querySelector(".Article");
 const viewWidth = (window.screen.width * 40) / 100;
@@ -13,8 +13,10 @@ let touchEnd
 
 // Delete
 deleteElement.addEventListener("click", () => {
-    mainElement.style.transform = "scale(0, 0)";
-    setTimeout(() => {mainElement.remove()}, 1000);
+    // mainElement.style.transform = "scale(0, 0)";
+    itemElement.classList.add("animate__animated", "animate__backOutLeft");
+    setTimeout(() => {itemElement.classList.add("collapsed")}, 500);
+    setTimeout(() => {itemElement.remove()}, 500 + 500); // Wait th time it takes for all animations to run
 });
 
 // Touch start
