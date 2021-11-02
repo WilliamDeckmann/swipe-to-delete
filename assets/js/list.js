@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Touch move
             article.addEventListener("touchmove", (e) => {
                 touchMove = Math.floor(e.touches[0].clientX);
-                if(touchMove < touchStart && touchMove > touchStart - viewWidth) { // remove.offsetWidth
+                if(touchMove < touchStart && touchMove > touchStart - remove.offsetWidth) { // remove.offsetWidth // viewWidth
                     article.style.transform = `translateX(${touchMove - touchStart}px)`;
                 };
             });
@@ -79,8 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
             // Touch end
             article.addEventListener("touchend", (e) => {
                 touchEnd = Math.floor(e.changedTouches[0].clientX);
-                if(touchEnd < touchStart - viewWidth / 2) { // remove.offsetWidth / 2
-                    article.style.transform = `translateX(-${viewWidth}px)`;
+                if(touchEnd < touchStart - remove.offsetWidth / 2) { // remove.offsetWidth / 2  // viewWidth / 2
+                    article.style.transform = `translateX(-${remove.offsetWidth}px)`;
                 }else {
                     article.style.transform = `translateX(${e.target.offsetLeft})`;
                 }
