@@ -69,7 +69,7 @@
     height: 0;
 }
 
-.Delete, .Article {
+.Delete, .Remove, .Article {
     width: 100%;
     padding: 25px;
     box-sizing: border-box;
@@ -85,14 +85,21 @@
     pointer-events: none;
 }
 
-.Delete {
+.Delete, .Remove {
     grid-column: 2 / 3;
-    background-color: rgb(255, 81, 81);
     display: flex;
     justify-content: flex-end;
 }
 
-.Trash {
+.Delete {
+    background-color: rgb(255, 81, 81);
+}
+
+.Remove {
+    background-color: rgb(23, 22, 65);
+}
+
+.Trash, .Skull {
     text-align: right;
     font-size: 32px;
     pointer-events: none;
