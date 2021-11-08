@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     deletedArray.forEach(element => {
         idArray.push(element.id);
     });
-    console.log(idArray);
 
 
 
