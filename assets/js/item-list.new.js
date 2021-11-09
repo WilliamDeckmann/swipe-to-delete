@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let deletedArray = JSON.parse(localStorage.getItem("deleted"));
 
     // Id array
-    /* let idArray = [];
+    let idArray = [];
     deletedArray.forEach(element => {
         idArray.push(element.id);
-    }); */
+    });
 
 
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Response variable
                 let data = response.data[i];
 
-                //if(!data.username.includes(idArray[i])) {
+                if(!data.username.includes(idArray[i])) {
 
                     // Create: item
                     let item = document.createElement("li");
@@ -38,9 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     // Create: remove
                     let remove = document.createElement("div");
                     item.appendChild(remove);
-                    remove.classList.add("Delete")
+                    remove.classList.add("Button")
                     remove.innerHTML = `
-                        <i class="fas fa-trash-alt Trash"></i>
+                        <section class="Archive">
+                        <i class="fas fa-folder-open Folder"></i>
+                        </section>
+                        <section class="Delete">
+                            <i class="fas fa-trash-alt Trash"></i>
+                        </section>
                     `;
 
                     // Create: article
@@ -52,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             Username: ${data.username}
                         </p>
                     `;
-                //};
+                };
             };
         });
 
